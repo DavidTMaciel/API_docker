@@ -2,5 +2,9 @@
   "name": "api_prisma_docker",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.16.0",
+    "prisma": "^4.16.0"
+  }
 }
