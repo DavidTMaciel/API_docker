@@ -1,33 +1,47 @@
-import {prisma} from "../services/prisma"
+import { prisma } from "../services/prisma"
 
-export const createUser = async (data) =>{
+export const createUser = async (data) => {
     const user = await prisma.user.create({
         data,
-        select:{
+        select: {
             id: true,
             name: true,
             email: true,
             password: false,
             phone: true,
-            created_at:true,
-            updated_at:true
+            created_at: true,
+            updated_at: true
         }
     })
     return user;
 }
 
-export const getAll = async () =>{
+export const getAll = async () => {
     const users = await prisma.user.findMany({
-        select:{
+        select: {
             id: true,
             name: true,
             email: true,
             password: false,
             phone: true,
-            created_at:true,
-            updated_at:true
+            created_at: true,
+            updated_at: true
         }
     });
     return users;
 }
 
+export const getUser = async (id) => {
+    const user = await prisma.user.findUnique({
+        where: {id}, select: {
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            created_at: true,
+            updated_at: true
+        }
+    })
+    return user;
+}
