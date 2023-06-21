@@ -1,7 +1,7 @@
 import { createUser,UpdateUser } from "../repositorys/user.repositor";
 import bcrypt from "bcrypt";
 import { userValidation } from "../validations/validations";
-
+import { getAll } from "../repositorys/user.repositor";
 
 export const create = async (req, res) => {
     try {
@@ -16,5 +16,14 @@ export const create = async (req, res) => {
         res.status(400).send(error);
         console.log(error);
     
+    }
+};
+
+export const listUsers = async (req, res) => {
+    try{
+        const users = await getAll();
+        res.status(200).send(users);
+    }catch(error){
+        res.status(400).send(error);
     }
 };
