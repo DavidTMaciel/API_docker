@@ -2,6 +2,7 @@ import { createUser,UpdateUser } from "../repositorys/user.repositor";
 import bcrypt from "bcrypt";
 import { userValidation } from "../validations/validations";
 import { getAll } from "../repositorys/user.repositor";
+import { getUser } from "../repositorys/user.repositor";
 
 export const create = async (req, res) => {
     try {
@@ -25,5 +26,15 @@ export const listUsers = async (req, res) => {
         res.status(200).send(users);
     }catch(error){
         res.status(400).send(error);
+    }
+};
+
+export const listUser = async (req,res) => {
+    try{
+        const user = await getUser(Number(req.params.id));
+        res.status(200).send(user);
+    }catch(error){
+        res.status(400).send(error);
+        console.log(error);
     }
 };
