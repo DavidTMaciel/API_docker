@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import { userValidation } from "../validations/validations";
 import { getAll } from "../repositorys/user.repositor";
 import { getUser } from "../repositorys/user.repositor";
+import { updaterUser } from "../repositorys/user.repositor";
 
 export const create = async (req, res) => {
     try {
@@ -36,5 +37,17 @@ export const listUser = async (req,res) => {
     }catch(error){
         res.status(400).send(error);
         console.log(error);
+    }
+};
+
+export const update = async (req,res) => {
+    try{
+        const updatedData = req.body;
+        const user = await updaterUser(Number(req.params.id), updatedData);
+        res.status(200).send(user);
+    }catch(error){
+        res.status(400).send(error);
+        console.log(error);
+
     }
 };
