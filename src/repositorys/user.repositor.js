@@ -33,7 +33,7 @@ export const getAll = async () => {
 
 export const getUser = async (id) => {
     const user = await prisma.user.findUnique({
-        where: {id}, select: {
+        where: { id }, select: {
             id: true,
             name: true,
             email: true,
@@ -45,3 +45,19 @@ export const getUser = async (id) => {
     })
     return user;
 }
+
+export const updaterUser = async (id, updatedData) => {
+
+    const user = await prisma.user.update({
+        where: { id }, data: updatedData, select: {
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            created_at: true,
+            updated_at: true
+        }
+    })
+    return user;
+};
