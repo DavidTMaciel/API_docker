@@ -1,4 +1,8 @@
-import { create, deleteUserId, listUsers, listUser, update } from "../controller/user-controller";
+import { create} from "../controller/user-controller";
+import { deleteUserId } from "../controller/user-controller";
+import { listUser } from "../controller/user-controller";
+import { listUsers } from "../controller/user-controller";
+import { update } from "../controller/user-controller";
 
 const userRoutes = app =>{
     app.post("/user", create)

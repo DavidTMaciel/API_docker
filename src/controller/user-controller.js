@@ -1,8 +1,10 @@
-import { createUser,UpdateUser } from "../repositorys/user.repositor";
+import { createUser } from "../repositorys/user.repositor";
 import bcrypt from "bcrypt";
 import { userValidation } from "../validations/validations";
-import { getAll, getUser, updaterUser, deleteUser } from "../repositorys/user.repositor";
-
+import { getAll} from "../repositorys/user.repositor";
+import {getUser } from "../repositorys/user.repositor";
+import {updaterUser} from "../repositorys/user.repositor";
+import { deleteUser } from "../repositorys/user.repositor";
 
 export const create = async (req, res) => {
     try {
