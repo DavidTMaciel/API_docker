@@ -15,13 +15,15 @@ A API possui as seguintes funcionalidades para o recurso de usuário:
 
 A API expõe os seguintes endpoints para interagir com o recurso de usuário:
 
-- `POST /api/usuarios`: Cria um novo usuário com base nos dados fornecidos no corpo da requisição.
+- `POST /user`: Cria um novo usuário com base nos dados fornecidos no corpo da requisição.
 
-- `GET /api/usuarios/:id`: Retorna as informações de um usuário específico com base no ID fornecido na URL.
+-  `GET /users`: Retorna as informações de todos os usuarios cadastrados.
 
-- `PUT /api/usuarios/:id`: Atualiza as informações de um usuário específico com base no ID fornecido na URL e nos dados fornecidos no corpo da requisição.
+- `GET /user/:id`: Retorna as informações de um usuário específico com base no ID fornecido na URL.
 
-- `DELETE /api/usuarios/:id`: Exclui um usuário específico com base no ID fornecido na URL.
+- `PUT /user/update/:id`: Atualiza as informações de um usuário específico com base no ID fornecido na URL e nos dados fornecidos no corpo da requisição.
+
+- `DELETE /user/delete/:id`: Exclui um usuário específico com base no ID fornecido na URL.
 
 ## Parâmetros
 
