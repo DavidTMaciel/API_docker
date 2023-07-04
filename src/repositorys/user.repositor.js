@@ -61,3 +61,18 @@ export const updaterUser = async (id, updatedData) => {
     })
     return user;
 };
+
+export const deleteUser = async (id) => {
+    const user = await prisma.user.delete({
+        where: { id }, select:{
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            created_at: true,
+            updated_at: true
+        }
+    });
+    return user;
+};
