@@ -49,6 +49,7 @@ Antes de prosseguir, verifique se você tem o seguinte software instalado em seu
 ```bash
 # entrar na pasta do projeto 
 cd api_prisma_docker
+
 # Instalando dependecias
 $ yarn intall
 ```
@@ -58,8 +59,11 @@ $ yarn intall
  Abra o arquivo .env e ajuste as variáveis de ambiente conforme necessário.
  
 ## Inicialização da API
-1. Inicie a API executando o seguinte comando:
+1. Inicie a API executando os seguintes comandos:
 ```bash
+# Iniciar os serviços definidos no docker-compose.yml
+$ docker-compose up -d
+# Startando a API.
 $ yarn start
 ```
 2. A API será iniciada e estará disponível em http://localhost:3031.
